@@ -1,5 +1,36 @@
 workflows:
-  hello-world:
-    name: Hello world workflow
+  testApp-workflow:
+    name: testApp workflow
+    environment:
+      ios_signing:
+      distribution_type: development
+      bundle_identifier: test.bdwalker.testApp
+      vars:
+        BUNDLE_ID: "test.bdwalker.testApp"
+        XCODE_WORKSPACE: "testApp.xcworkspace" 
+        XCODE_SCHEME: "testApp" 
+      xcode: latest
+      cocoapods: default
     scripts:
-        - echo "Hello World!"
+        - name: Install CocoaPods dependencies
+          script: | 
+            pod install
+        - name: Set up provisioning profiles settings on Xcode project
+          script: xcode-project use-profiles
+        - name: Increment build number
+          script: | 
+            cd $CM_BUILD_DIR
+            LATEST_BUILD_NUMBER=$(app-store-connect get-latest-app-store-build-number "$APP_STORE_APPLE_ID")
+            agvtool new-version -all $(($LATEST_BUILD_NUMBER + 1))
+        - name: Setup code signing settings on Xcode project
+          script: xcode-project use-profiles
+        - name: Build ipa for distribution
+          script: |
+            xcode-project build-ipa \
+              --workspace "$CM_BUILD_DIR/$XCODE_WORKSPACE" \
+              --scheme "$XCODE_SCHEME"
+artifacts:
+  - build/ios/ipa/*.ipa
+  - /tmp/xcodebuild_logs/*.log
+  - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
+  - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
