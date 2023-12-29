@@ -4,9 +4,6 @@ workflows:
     environment:
       groups:
         - manual_code_signing
-      ios_signing:
-        distribution_type: development
-        bundle_identifier: test.bdwalker.testApp
       vars:
         BUNDLE_ID: "test.bdwalker.testApp"
         XCODE_WORKSPACE: "testApp.xcworkspace" 
