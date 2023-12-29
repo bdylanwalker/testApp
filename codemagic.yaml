@@ -3,8 +3,8 @@ workflows:
     name: testApp workflow
     environment:
       ios_signing:
-      distribution_type: development
-      bundle_identifier: test.bdwalker.testApp
+        distribution_type: development
+        bundle_identifier: test.bdwalker.testApp
       vars:
         BUNDLE_ID: "test.bdwalker.testApp"
         XCODE_WORKSPACE: "testApp.xcworkspace" 
