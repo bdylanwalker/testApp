@@ -11,9 +11,6 @@ workflows:
       xcode: latest
       cocoapods: default
     scripts:
-        - name: Install CocoaPods dependencies
-          script: | 
-            pod install
         - name: Initialize keychain to be used for codesigning using Codemagic CLI 'keychain' command
           script: |
             keychain initialize
