@@ -272,7 +272,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Mercy Corps (HT36CWU2HG)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Mercy Corps (HT36CWU2HG)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"testApp/Preview Content\"";
 				DEVELOPMENT_TEAM = HT36CWU2HG;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = HT36CWU2HG;
@@ -312,7 +312,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Mercy Corps (HT36CWU2HG)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Distribution: Mercy Corps (HT36CWU2HG)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"testApp/Preview Content\"";
 				DEVELOPMENT_TEAM = HT36CWU2HG;
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = HT36CWU2HG;
